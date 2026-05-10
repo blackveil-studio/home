@@ -372,7 +372,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 </head>
 <body>
 <style>
-.page-hero{background:#080706;padding:128px 0 80px;position:relative}
+.page-hero{background:#080706;padding:128px 0 80px;position:relative;min-height:440px}
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.2),transparent)}
 .ph-inner{max-width:1280px;margin:0 auto;padding:0 64px}
 .ph-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#C9A84C;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:12px}
@@ -518,6 +518,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 </footer>
 <script>
 const canvas=document.getElementById('c');
+if(canvas){
 const ctx=canvas.getContext('2d');
 let W,H,mouse={x:-999,y:-999},particles=[];
 const GOLD='rgba(201,168,76,',GOLD2='rgba(232,201,122,',WHITE='rgba(240,237,232,';
@@ -736,8 +737,7 @@ document.querySelectorAll('.reveal-up, .reveal-card').forEach(el => observer.obs
   const sec=document.getElementById('why');
   if(sec){new IntersectionObserver(([e],ob)=>{if(e.isIntersecting){activate(0);start();ob.disconnect();}},{threshold:0.2}).observe(sec);}
 })();
-
-</script>
+}</script>
 <script>
 (function(){
   var nav=document.getElementById('nav');
