@@ -419,7 +419,7 @@ footer{background:#F2EDE4;border-top:1px solid rgba(26,21,16,.12);padding:52px 0
 .ab-stats-clean .as-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,21,16,.42);margin-top:7px;display:block}
 
 /* Services compact on main */
-.sv-compact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:rgba(26,21,16,.06);border:1px solid rgba(26,21,16,.08)}
+.sv-compact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .sv-compact-item{background:#fff;padding:44px 40px;position:relative;overflow:hidden;transition:background .3s,box-shadow .3s;border-right:1px solid rgba(26,21,16,.07);border-bottom:1px solid rgba(26,21,16,.07)}
 .sv-compact-item:nth-child(1),.sv-compact-item:nth-child(3),.sv-compact-item:nth-child(5){background:#fff}
 .sv-compact-item:nth-child(2),.sv-compact-item:nth-child(4),.sv-compact-item:nth-child(6){background:#F5EFE3}
@@ -711,22 +711,26 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
         <p style="font-size:16px;line-height:1.75;color:rgba(240,237,232,.72);font-weight:400;margin-bottom:28px;max-width:420px">No agencies, no calls. You message me, I build it, it goes live in 2&ndash;3 days.</p>
         <a href="about.html" style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;text-decoration:none;border-bottom:1px solid rgba(201,168,76,.35);padding-bottom:3px;font-family:'DM Sans',sans-serif;transition:border-color .25s" onmouseover="this.style.borderBottomColor='#C9A84C'" onmouseout="this.style.borderBottomColor='rgba(201,168,76,.35)'">Learn more &rarr;</a>
       </div>
-      <div class="reveal-up" style="--d:150ms;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.15)">
-        <div style="background:rgba(8,7,6,.6);backdrop-filter:blur(8px);padding:32px 28px;text-align:center">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;color:#F0EDE8;line-height:1;display:block">2&ndash;3</span>
-          <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,232,.4);margin-top:8px;display:block">Days to go live</span>
+      <div class="reveal-up" style="--d:150ms;display:flex;flex-direction:column;gap:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:rgba(255,255,255,.12);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);padding:28px 24px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:#fff;line-height:1;display:block">2&ndash;3</span>
+            <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:8px;display:block;font-family:'DM Sans',sans-serif">Days to go live</span>
+          </div>
+          <div style="background:rgba(201,168,76,.2);backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.35);padding:28px 24px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:#C9A84C;line-height:1;display:block">2</span>
+            <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.7);margin-top:8px;display:block;font-family:'DM Sans',sans-serif">Free revisions</span>
+          </div>
         </div>
-        <div style="background:rgba(201,168,76,.12);backdrop-filter:blur(8px);padding:32px 28px;text-align:center">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;color:#C9A84C;line-height:1;display:block">2</span>
-          <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-top:8px;display:block">Free revisions</span>
-        </div>
-        <div style="background:rgba(201,168,76,.18);backdrop-filter:blur(8px);padding:32px 28px;text-align:center;border-top:1px solid rgba(201,168,76,.15)">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;color:#C9A84C;line-height:1;display:block">30</span>
-          <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-top:8px;display:block">Days support</span>
-        </div>
-        <div style="background:rgba(8,7,6,.6);backdrop-filter:blur(8px);padding:32px 28px;text-align:center;border-top:1px solid rgba(201,168,76,.15)">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;color:#F0EDE8;line-height:1;display:block">0</span>
-          <span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,232,.4);margin-top:8px;display:block">Calls needed</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:rgba(201,168,76,.2);backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.35);padding:28px 24px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:#C9A84C;line-height:1;display:block">30</span>
+            <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.7);margin-top:8px;display:block;font-family:'DM Sans',sans-serif">Days support</span>
+          </div>
+          <div style="background:rgba(255,255,255,.12);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);padding:28px 24px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:500;color:#fff;line-height:1;display:block">0</span>
+            <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:8px;display:block;font-family:'DM Sans',sans-serif">Calls needed</span>
+          </div>
         </div>
       </div>
     </div>
