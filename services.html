@@ -29,9 +29,9 @@ nav.scrolled::before{opacity:1}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:#C9A84C;transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .nav-links a:hover{color:#F0EDE8}
 .nav-links a:hover::after{transform:scaleX(1)}
-.nav-cta{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;text-decoration:none;border:1.5px solid rgba(201,168,76,.6);padding:11px 26px;position:relative;overflow:hidden;transition:color .35s,border-color .35s;font-family:'DM Sans',sans-serif}
+.nav-cta{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1A1510;background:#C9A84C;text-decoration:none;border:1.5px solid #C9A84C;padding:11px 26px;position:relative;overflow:hidden;transition:color .35s,border-color .35s;font-family:'DM Sans',sans-serif}
 .nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#1a1508,#2a1f08);transform:scaleX(0);transform-origin:left;transition:transform .38s}
-.nav-cta:hover{color:#E8C97A;border-color:rgba(201,168,76,.8)}
+.nav-cta:hover{color:#1A1510;border-color:#D4B86A}
 .nav-cta:hover::before{transform:scaleX(1)}
 .nav-cta span{position:relative;z-index:1}
 .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;background:none;border:none;padding:4px;z-index:200;flex-shrink:0}
@@ -386,20 +386,21 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 .sv-photo:hover img{transform:scale(1.05)}
 .sv-photo-overlay{position:absolute;inset:0;background:rgba(8,7,6,.4);display:flex;align-items:flex-end;padding:24px}
 .sv-photo-label{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(240,237,232,.85)}
-.sv-page{background:#FAFAF7;padding:80px 0}
+.sv-page{background:#FAFAF7;padding:56px 0 40px}
 .sv-page-inner{max-width:1280px;margin:0 auto;padding:0 64px}
 /* Cards — SVG icons instead of emoji */
 .sv-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,21,16,.08);margin-top:56px}
 .sv-card{background:#fff;padding:40px 36px;transition:background .25s,transform .25s,box-shadow .25s}
+.sv-card:nth-child(2),.sv-card:nth-child(3),.sv-card:nth-child(5),.sv-card:nth-child(6){background:#FBF7EE}
 .sv-card:hover{background:#FFFBF2;transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,21,16,.08);z-index:1}
 .sv-card-icon{width:40px;height:40px;margin-bottom:22px;display:block;color:#B8923C}
 .sv-card-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .sv-card-name{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,28px);font-weight:600;color:#1A1510;margin-bottom:12px;line-height:1.15}
-.sv-card-text{font-size:15px;line-height:1.75;color:rgba(26,21,16,.68);font-weight:400;margin-bottom:16px}
+.sv-card-text{font-size:15px;line-height:1.75;color:rgba(26,21,16,.75);font-weight:400;margin-bottom:16px}
 .sv-card-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-.sv-card-list li{font-size:13px;color:rgba(26,21,16,.58);display:flex;align-items:baseline;gap:8px;font-weight:400}
+.sv-card-list li{font-size:14px;color:rgba(26,21,16,.72);display:flex;align-items:baseline;gap:8px;font-weight:500}
 .sv-card-list li::before{content:'–';color:#B8923C;flex-shrink:0;font-weight:600}
-.sv-cta-section{background:#1E1810;padding:80px 0;text-align:center}
+.sv-cta-section{background:#1E1810;padding:52px 0 72px;text-align:center}
 .sv-cta-inner{max-width:700px;margin:0 auto;padding:0 64px}
 @media(max-width:1024px){.sv-cards{grid-template-columns:repeat(2,1fr)}.ph-inner,.sv-page-inner,.sv-cta-inner{padding-left:40px;padding-right:40px}}
 @media(max-width:650px){.sv-cards{grid-template-columns:1fr}.sv-photo-strip{grid-template-columns:1fr;height:auto}.sv-photo{height:200px}.ph-inner,.sv-page-inner,.sv-cta-inner{padding-left:24px;padding-right:24px}.page-hero{padding:100px 0 56px}}
@@ -441,7 +442,8 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   </div>
 </div>
 
-<section class="page-hero" style="position:relative;overflow:hidden">
+<section class="page-hero" style="position:relative;overflow:hidden;min-height:380px">
+  <canvas id="c" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></canvas>
   <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?w=1400&q=80&fit=crop&crop=center" alt="Web design workspace" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18" loading="eager">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(8,7,6,.97) 0%,rgba(8,7,6,.85) 60%,rgba(8,7,6,.7) 100%)"></div>
   <div class="ph-inner" style="position:relative;z-index:1">
@@ -763,5 +765,7 @@ document.querySelectorAll('.reveal-up, .reveal-card').forEach(el => observer.obs
     reveals.forEach(function(el){el.classList.add('visible');});
   }
 })();
-</script>
+
+// init canvas on services page
+(function(){var c=document.getElementById("c");if(c){var ctx=c.getContext("2d");function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}resize();window.addEventListener("resize",resize);}})();</script>
 </body></html>
