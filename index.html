@@ -420,10 +420,12 @@ footer{background:#F2EDE4;border-top:1px solid rgba(26,21,16,.12);padding:52px 0
 
 /* Services compact on main */
 .sv-compact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sv-compact-item{background:#fff;padding:44px 40px;position:relative;overflow:hidden;transition:background .3s,box-shadow .3s;border-right:1px solid rgba(26,21,16,.07);border-bottom:1px solid rgba(26,21,16,.07)}
+.sv-compact-item{padding:48px 44px;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;box-shadow:0 4px 24px rgba(26,21,16,.07);border:1px solid rgba(26,21,16,.06)}
+.sv-compact-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(201,168,76,.15);transition:background .4s}
+.sv-compact-item:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(26,21,16,.11)}
+.sv-compact-item:hover::before{background:#C9A84C}
 .sv-compact-item:nth-child(1),.sv-compact-item:nth-child(3),.sv-compact-item:nth-child(5){background:#fff}
 .sv-compact-item:nth-child(2),.sv-compact-item:nth-child(4),.sv-compact-item:nth-child(6){background:#F5EFE3}
-.sv-compact-item:nth-child(3n){border-right:none}
 .sv-compact-item:nth-child(4),.sv-compact-item:nth-child(5),.sv-compact-item:nth-child(6){border-bottom:none}
 .sv-compact-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .3s}
 .sv-compact-item:hover{background:#FFFBF2;box-shadow:inset 0 0 0 1px rgba(201,168,76,.2)}
@@ -574,14 +576,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   <div class="pf-scroll-hint reveal-up" style="--d:200ms">Drag or swipe to see more</div>
 </section>
 
-<!-- VISUAL DIVIDER between portfolio and quiz -->
-<div style="background:#1A1510;padding:28px 0;text-align:center;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;opacity:.08;background:repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 60px)"></div>
-  <div style="position:relative;display:flex;align-items:center;justify-content:center;gap:32px;max-width:1280px;margin:0 auto;padding:0 64px">
-    <span style="height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(201,168,76,.25))"></span>
-    <span style="font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,168,76,.6);font-family:'DM Sans',sans-serif;font-weight:600;white-space:nowrap">Find your fit</span>
-    <span style="height:1px;flex:1;background:linear-gradient(to left,transparent,rgba(201,168,76,.25))"></span>
-  </div>
+<!-- DIVIDER between portfolio and quiz -->
+<div style="background:#1A1510;padding:18px 0;text-align:center">
+  <p style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(201,168,76,.78);font-family:'DM Sans',sans-serif;font-weight:700;margin:0">&#9670;&nbsp;&nbsp;FIND YOUR FIT&nbsp;&nbsp;&#9670;</p>
 </div>
 
 <!-- QUIZ — light, right after portfolio -->
@@ -678,7 +675,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 </div>
 
 <!-- SERVICES COMPACT — 3-col grid, just names + one line -->
-<section id="services" style="background:#F2EDE4;padding:44px 0 72px;position:relative">
+<section id="services" style="background:#F2EDE4;padding:64px 0 80px;position:relative">
   <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.3),transparent)"></div>
   <div style="max-width:1280px;margin:0 auto;padding:0 64px">
     <div class="reveal-up" style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap">
